@@ -1,0 +1,14 @@
+*.pyc
+*~
+__pycache__
+myenvDT
+db.sqlite3
+/static
+.DS_Store
+settings.py
+urls.py
+*.xml
+*.idea
+/tensorflow
+/log
+/tmp
