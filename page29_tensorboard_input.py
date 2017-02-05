@@ -12,3 +12,11 @@ with tf.Session() as session:
     print(session.run(y))
     # close the session so the file is created on disc
     session.close()
+
+"""xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+I could not get the output to show in TensorBoard and after reading online
+suspect there is a bug in the pip install method for installing tf; there is a 
+missing svg path which the browser will need to render a graph
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
