@@ -12,3 +12,4 @@ urls.py
 /tensorflow
 /log
 /tmp
+*.ipynb
