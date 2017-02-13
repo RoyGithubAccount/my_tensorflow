@@ -25,4 +25,4 @@ with tf.Session() as second_session:
     print("uniform without = {}" \
           .format(second_session.run(uniform_without_seed)))
 
-print "Note how the seeded values get same answer in the different sessions"
+print("Note how the seeded values get same answer in the different sessions")

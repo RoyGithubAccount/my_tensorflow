@@ -11,6 +11,6 @@ sess = tf.Session()
 
 # evaluate session using eval()
 with tf.Session() as session:
-    print uniform.eval()
+    print(uniform.eval())
     plt.hist(uniform.eval(), normed=True)
     plt.show()

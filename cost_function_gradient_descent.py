@@ -1,36 +1,44 @@
-# uses tensorflow for Linear Regression where constants A and B are unknown
-# introduces cost functions and gradient descent
-# aim is to predict y as a function of x in y = Ax + b
-
+# final version of code on pages 75 and 76, works pretty good
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-# Define A and b as tf variables
-A = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
-b = tf.Variable(tf.zeros([1]))
+# number of points we want to draw
+number_of_points = 200
 
-# initialise x_point and y_point as in linear_regression.py
+# initialise 2 lists
 x_point = []
 y_point = []
 
-# generate 300  to store in x_point and y_point
-for i in range(300):
-    x_value = np.random.normal(0.0, 0.3)
-    y_value = np.random.normal(0.0, 0.05)
-    #x_value = i**3
-    #y_value = i**2
-    x_point.append([x_value])
-    y_point.append([y_value])
+# set 2 constants we'll plug in to y = 0.22x + 0.78
+a = 0.22
+b = 0.78
+
+# generate 300 random points around y = 0.22x + 0.78
+for i in range(number_of_points):
+    x = np.random.normal(0.0, 0.5)
+    y = a*x + b +np.random.normal(0.0, 0.1)
+    x_point.append([x])
+    y_point.append([y])
+
+
+# view in matplotlib
+plt.plot(x_point, y_point, 'o', label='Input Data')
+plt.legend()
+plt.show()
+
+# Define A and b as tf variables
+A = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
+B = tf.Variable(tf.zeros([1]))
 
 # bind y  to x in a linear relationship
-y = A * x_point + b
+y = A * x_point + B
 
 # define the Cost Function
 # has parameters containing a pair of values for A and b
 # returns a value that estimates how correct the predictions for A and b are using mean square error
-cost_function = tf.reduce_mean(tf.square(y_point - y))
+cost_function = tf.reduce_mean(tf.square(y - y_point))
 
 """
 xxxxxxxxxxxxxxxx  Gradient Descent Optimizer  xxxxxxxxxxxxxxxxxxxx
@@ -73,7 +81,7 @@ with tf.Session() as session:
             plt.plot(x_point,
                      session.run(A) *
                      x_point +
-                     session.run(b))
+                     session.run(B))
             plt.legend()
             plt.show(block=False)
             time.sleep(1)

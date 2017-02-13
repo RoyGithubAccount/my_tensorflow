@@ -6,11 +6,9 @@ matrix1 = np.array([(2,2,2), (2,2,2), (2,2,2)], dtype='int32')
 matrix2 = np.array([(1,1,1), (1,1,1), (1,1,1)], dtype='int32')
 
 # visualize them
-print "matrix1 = "
-print matrix1
+print("matrix1 = ", matrix1)
 
-print "matrix2 = "
-print matrix2
+print("matrix2 = ", matrix2)
 
 print("Next we transform the matricies in to a tensor data structure")
 matrix1 = tf.constant(matrix1)
@@ -22,8 +20,7 @@ matrix_sum = tf.add(matrix1, matrix2)
 
 print("find the determinant")
 matrix_3 = np.array([(2,7,2), (1,4,2), (9,0,2)], dtype='float32')
-print "matrix 3 ="
-print matrix_3
+print("matrix 3 =", matrix_3)
 
 matrix_det = tf.matrix_determinant(matrix_3)
 
@@ -34,11 +31,8 @@ with tf.Session() as sess:
     result3 = sess.run(matrix_det)
 
 # print out results
-print "matrix1 * matrix2 ="
-print result1
+print("matrix1 * matrix2 = ", result1)
 
-print "matrix1 + matrix2 ="
-print result2
+print("matrix1 + matrix2 = ", result2)
 
-print "[(2,7,2), (1,4,2), (9,0,2)] = matrix3 and its determinant result ="
-print result3
+print("[(2,7,2), (1,4,2), (9,0,2)] = matrix3 and its determinant result = ", result3)

@@ -28,8 +28,8 @@ def laplace(x):
                              [0.5, 1.0, 0.5]])
     return simple_conv(x, laplace_k)
 
-# define pond as 500 x 500
-N = 500
+# define pond as 150 x 150
+N = 150
 
 # initial condition is pond at t = 0
 u_init = np.zeros([N, N], dtype=np.float32)

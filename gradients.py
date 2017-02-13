@@ -12,5 +12,4 @@ var_grad = tf.gradients(y,x)
 # to evaluate we need a session
 with tf.Session() as session:
     var_grad_val = session.run(var_grad, feed_dict={x:2}) # feed_dict is the value we want to plug in for x
-    print " The value of dy/dx for the entered formula and a value of x ="
-    print(var_grad_val)
+    print(" The value of dy/dx for the entered formula and a value of x = ", var_grad_val)

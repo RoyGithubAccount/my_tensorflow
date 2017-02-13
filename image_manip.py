@@ -5,8 +5,8 @@ import matplotlib.image as mp_image
 filename = "packt.jpeg"
 input_image = mp_image.imread(filename)
 
-print 'input dim = {}'.format(input_image.ndim)
-print 'input shape = {}'.format(input_image.shape)
+print('input dim = {}'.format(input_image.ndim))
+print('input shape = {}'.format(input_image.shape))
 
 # out put = ( 100, 181, 3) which is 100 pixels high, 144 pixels wide and 3 colours deep
 
@@ -26,7 +26,7 @@ slice = tf.slice(my_image, [10,0,0], [20,-1,-1])
 # now build a tensorflow session
 with tf.Session() as sess:
     result = sess.run(slice, feed_dict={my_image: input_image})
-    print (result.shape)
+    print(result.shape)
 
 plt.imshow(result)   # Note, it will regenerate 1st image which you need to click to close so the next can be rendered
 plt.show()
