@@ -13,3 +13,8 @@ urls.py
 /log
 /tmp
 *.ipynb
+*.pickle
+*.csv
+*.ckpt
+*.ckpt.*
+/trainingandtestdata
